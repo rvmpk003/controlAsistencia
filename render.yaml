@@ -25,9 +25,7 @@ services:
           name: office-attendance-db
           property: port
       - key: DB_NAME
-        fromDatabase:
-          name: office-attendance-db
-          property: database
+        value: office_attendance
       - key: DB_USERNAME
         fromDatabase:
           name: office-attendance-db
