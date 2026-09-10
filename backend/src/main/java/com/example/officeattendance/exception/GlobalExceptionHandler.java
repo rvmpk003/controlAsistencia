@@ -8,6 +8,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -51,6 +52,14 @@ public class GlobalExceptionHandler {
             HttpServletRequest request) {
 
         return buildError(HttpStatus.BAD_REQUEST, "Bad Request", ex.getMessage(), request.getRequestURI());
+    }
+
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<ApiError> handleNoHandlerFound(
+            NoHandlerFoundException ex,
+            HttpServletRequest request) {
+
+        return buildError(HttpStatus.NOT_FOUND, "Not Found", "Endpoint not found", request.getRequestURI());
     }
 
     @ExceptionHandler(Exception.class)

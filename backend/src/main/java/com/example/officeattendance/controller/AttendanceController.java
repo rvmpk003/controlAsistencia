@@ -77,4 +77,10 @@ public class AttendanceController {
         AttendanceMonthResponse response = attendanceService.getMonthlyAttendance(year, month);
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/health")
+    @Operation(summary = "Health check", description = "Devuelve el estado del servicio")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
 }
