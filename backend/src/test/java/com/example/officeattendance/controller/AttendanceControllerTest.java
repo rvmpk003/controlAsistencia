@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(AttendanceController.class)
+@WebMvcTest(controllers = {AttendanceController.class, RootController.class})
 class AttendanceControllerTest {
 
     @Autowired
@@ -58,5 +58,13 @@ class AttendanceControllerTest {
                 .andExpect(status().isOk());
 
         Mockito.verify(attendanceService).getMonthlyAttendance(2026, 9);
+    }
+
+    @Test
+    void rootEndpoint_shouldReturnApiInfo() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name").value("office-attendance"))
+                .andExpect(jsonPath("$.status").value("ok"));
     }
 }
