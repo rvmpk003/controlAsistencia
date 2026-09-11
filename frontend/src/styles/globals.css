@@ -2,29 +2,29 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #0f172a;
-  background: #edf3ef;
+  color: #e5eef8;
+  background: #07111d;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --background: #eef4f1;
-  --background-strong: #dfece4;
-  --card: rgba(255, 255, 255, 0.88);
-  --card-strong: #f8fafc;
-  --primary: #166534;
-  --primary-foreground: #ffffff;
-  --primary-soft: #dff5e5;
-  --foreground: #0f172a;
-  --muted: #5b6475;
-  --muted-foreground: #64748b;
-  --border: #d9e3ea;
-  --accent: #dcfce7;
-  --accent-foreground: #14532d;
-  --success: #22c55e;
-  --warning: #f59e0b;
-  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+  --background: #07111d;
+  --background-strong: #0d1a2a;
+  --card: rgba(16, 27, 44, 0.85);
+  --card-strong: rgba(19, 34, 53, 0.96);
+  --primary: #6ee7b7;
+  --primary-foreground: #03130d;
+  --primary-soft: rgba(110, 231, 183, 0.16);
+  --foreground: #edf6ff;
+  --muted: #a7bacd;
+  --muted-foreground: #9bb0c5;
+  --border: rgba(148, 163, 184, 0.22);
+  --accent: rgba(110, 231, 183, 0.2);
+  --accent-foreground: #dffef2;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --shadow: 0 28px 80px rgba(2, 6, 23, 0.45);
 }
 
 * {
@@ -36,8 +36,10 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(34, 197, 94, 0.1), transparent 28%),
-    linear-gradient(180deg, var(--background-strong) 0%, #f5f7fb 100%);
+    radial-gradient(circle at top left, rgba(110, 231, 183, 0.18), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(96, 165, 250, 0.12), transparent 25%),
+    linear-gradient(180deg, #07111d 0%, #0d1b2b 100%);
+  color: var(--foreground);
 }
 
 button {
@@ -56,12 +58,12 @@ button {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(203, 213, 225, 0.8);
+  background: rgba(14, 24, 39, 0.82);
+  border: 1px solid var(--border);
   border-radius: 30px;
   box-shadow: var(--shadow);
   padding: 24px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(18px);
 }
 
 .topbar {
@@ -70,7 +72,8 @@ button {
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 28px;
-  padding: 8px 6px;
+  padding: 8px 8px 18px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
 }
 
 .brand-block {
@@ -83,34 +86,35 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 58px;
+  height: 58px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--primary) 0%, #3aa66b 100%);
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
   color: var(--primary-foreground);
-  font-size: 1rem;
-  font-weight: 800;
+  font-size: 0.96rem;
+  font-weight: 900;
   letter-spacing: 0.08em;
-  box-shadow: 0 16px 28px rgba(22, 101, 52, 0.28);
+  box-shadow: 0 18px 30px rgba(52, 211, 153, 0.28);
 }
 
 .eyebrow,
 .label-title {
   margin: 0;
-  font-size: 0.76rem;
+  font-size: 0.73rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--muted-foreground);
 }
 
 .topbar h1 {
-  margin: 6px 0 0;
-  font-size: clamp(1.7rem, 2vw, 2.3rem);
-  line-height: 1.1;
-  letter-spacing: -0.04em;
+  margin: 8px 0 0;
+  font-size: clamp(1.8rem, 2vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
   text-transform: capitalize;
+  color: var(--foreground);
 }
 
 .topbar-controls {
@@ -124,7 +128,7 @@ button {
   height: 46px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: var(--card);
+  background: rgba(19, 34, 53, 0.9);
   color: var(--primary);
   font-size: 1.65rem;
   font-weight: 700;
@@ -133,34 +137,35 @@ button {
 }
 
 .nav-button:hover {
-  border-color: rgba(22, 101, 52, 0.3);
-  box-shadow: 0 12px 20px rgba(15, 23, 42, 0.05);
+  border-color: rgba(110, 231, 183, 0.45);
+  box-shadow: 0 12px 20px rgba(7, 17, 29, 0.5);
 }
 
 .toolbar {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 22px;
+  margin: 16px 0 24px;
 }
 
 .toolbar button {
-  border: none;
-  border-radius: 12px;
-  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px 18px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
 }
 
 .primary-action {
-  background: linear-gradient(135deg, var(--primary) 0%, #2d8f5b 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #34d399 100%);
   color: var(--primary-foreground);
-  box-shadow: 0 12px 22px rgba(22, 101, 52, 0.2);
+  box-shadow: 0 18px 30px rgba(52, 211, 153, 0.24);
 }
 
 .secondary-action {
-  background: var(--primary-soft);
+  background: rgba(110, 231, 183, 0.08);
+  border-color: rgba(110, 231, 183, 0.2);
   color: var(--primary);
 }
 
@@ -170,27 +175,27 @@ button {
 
 .alert {
   margin: 0 0 16px;
-  background: #fef2f2;
-  border: 1px solid #fecaca;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
   border-radius: 14px;
-  color: #991b1b;
+  color: #fca5a5;
   padding: 12px 14px;
   font-weight: 600;
 }
 
 .content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 2.1fr) minmax(290px, 0.9fr);
+  grid-template-columns: minmax(0, 2.15fr) minmax(280px, 0.85fr);
   gap: 24px;
 }
 
 .calendar-panel,
 .summary-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background: linear-gradient(180deg, rgba(19, 34, 53, 0.96), rgba(14, 24, 39, 0.95));
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 20px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 
 .panel-header {
@@ -202,9 +207,10 @@ button {
 }
 
 .panel-header h2 {
-  margin: 6px 0 0;
-  font-size: 1.1rem;
+  margin: 8px 0 0;
+  font-size: 1.18rem;
   letter-spacing: -0.02em;
+  color: var(--foreground);
 }
 
 .legend {
@@ -231,23 +237,23 @@ button {
 }
 
 .dot-attended {
-  background: linear-gradient(135deg, #34d399, #16a34a);
+  background: linear-gradient(135deg, #6ee7b7, #34d399);
 }
 
 .dot-today {
   background: var(--primary);
-  box-shadow: 0 0 0 2px rgba(22, 101, 52, 0.18);
+  box-shadow: 0 0 0 2px rgba(110, 231, 183, 0.28);
 }
 
 .weekdays,
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 8px;
+  gap: 10px;
 }
 
 .weekdays {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .weekdays span {
@@ -255,7 +261,7 @@ button {
   font-size: 0.78rem;
   color: var(--muted-foreground);
   font-weight: 700;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 
 .calendar-grid {
@@ -266,7 +272,7 @@ button {
   min-height: 82px;
   border: 1px solid var(--border);
   border-radius: 18px;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(180deg, rgba(28, 45, 67, 0.94), rgba(21, 35, 52, 0.98));
   color: var(--foreground);
   display: flex;
   align-items: center;
@@ -278,31 +284,31 @@ button {
 
 .day-cell:hover {
   transform: translateY(-1px);
-  border-color: rgba(22, 101, 52, 0.35);
-  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.04);
+  border-color: rgba(110, 231, 183, 0.45);
+  box-shadow: 0 10px 18px rgba(2, 6, 23, 0.32);
 }
 
 .day-cell:focus-visible,
 .nav-button:focus-visible,
 .toolbar button:focus-visible {
-  outline: 3px solid rgba(22, 101, 52, 0.35);
+  outline: 3px solid rgba(110, 231, 183, 0.45);
   outline-offset: 2px;
 }
 
 .day-cell.attended {
-  border-color: rgba(22, 163, 74, 0.35);
-  background: linear-gradient(135deg, #34d399 0%, #16a34a 100%);
-  color: white;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(52, 211, 153, 0.42);
+  background: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+  color: #04150f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 14px 22px rgba(52, 211, 153, 0.22);
 }
 
 .day-cell.muted {
-  opacity: 0.4;
+  opacity: 0.42;
 }
 
 .day-cell.today {
-  border: 2px solid rgba(22, 101, 52, 0.75);
-  box-shadow: inset 0 0 0 1px rgba(22, 101, 52, 0.12);
+  border: 2px solid rgba(110, 231, 183, 0.9);
+  box-shadow: inset 0 0 0 1px rgba(110, 231, 183, 0.2);
 }
 
 .summary-panel {
@@ -322,18 +328,18 @@ button {
 }
 
 .stat-card {
-  background: var(--card-strong);
+  background: rgba(28, 45, 67, 0.9);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 14px 12px;
 }
 
 .stat-card.primary {
-  background: linear-gradient(180deg, rgba(221, 244, 230, 0.85), rgba(248, 250, 252, 1));
+  background: linear-gradient(180deg, rgba(110, 231, 183, 0.12), rgba(22, 38, 58, 0.95));
 }
 
 .stat-card.accent {
-  background: linear-gradient(180deg, rgba(220, 252, 231, 0.9), rgba(248, 250, 252, 1));
+  background: linear-gradient(180deg, rgba(96, 165, 250, 0.12), rgba(22, 38, 58, 0.95));
 }
 
 .label {
@@ -347,6 +353,7 @@ button {
 .stat-card strong {
   font-size: 1.3rem;
   letter-spacing: -0.03em;
+  color: var(--foreground);
 }
 
 .progress-wrap {
@@ -378,11 +385,11 @@ button {
 .progress-bar span {
   height: 14px;
   border-radius: 999px;
-  background: #e5e7eb;
+  background: rgba(148, 163, 184, 0.22);
 }
 
 .progress-bar span.filled {
-  background: linear-gradient(90deg, #34d399 0%, #16a34a 100%);
+  background: linear-gradient(90deg, #6ee7b7 0%, #34d399 100%);
 }
 
 .progress-text {
@@ -394,6 +401,7 @@ button {
 .history h3 {
   margin: 0 0 12px;
   font-size: 0.96rem;
+  color: var(--foreground);
 }
 
 .history ul {
@@ -408,7 +416,7 @@ button {
 .history li {
   padding: 10px 12px;
   border-radius: 12px;
-  background: var(--card-strong);
+  background: rgba(28, 45, 67, 0.9);
   border: 1px solid var(--border);
   color: var(--foreground);
   font-size: 0.92rem;
@@ -429,11 +437,12 @@ button {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  background: rgba(15, 23, 42, 0.94);
+  background: rgba(6, 14, 23, 0.96);
+  border: 1px solid rgba(110, 231, 183, 0.28);
   color: white;
   padding: 12px 16px;
   border-radius: 999px;
-  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 18px 36px rgba(2, 6, 23, 0.35);
   z-index: 20;
   font-weight: 600;
 }
@@ -445,6 +454,10 @@ button {
 }
 
 @media (max-width: 620px) {
+  .app-shell {
+    padding: 18px 12px 32px;
+  }
+
   .container {
     padding: 16px;
     border-radius: 22px;
@@ -452,6 +465,7 @@ button {
 
   .topbar {
     flex-wrap: wrap;
+    padding-bottom: 14px;
   }
 
   .brand-block {
